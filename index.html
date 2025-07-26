@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Page</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            overflow: hidden; /* Prevent scrollbar from background animation */
+            background: linear-gradient(to bottom,
+                rgb(255, 0, 0),    /* Red */
+                rgb(255, 255, 0),  /* Yellow */
+                rgb(0, 255, 0),    /* Green */
+                rgb(0, 255, 255),  /* Cyan */
+                rgb(0, 0, 255),    /* Blue */
+                rgb(255, 0, 255)   /* Magenta */
+            );
+            background-size: 100% 600%; /* Adjust height for smooth animation */
+            animation: colorChange 15s ease infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background for content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90%; /* Responsive width */
+        }
+
+        h1 {
+            font-size: 3em; /* Large title */
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .responsive-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .responsive-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Smaller title on mobile */
+            }
+            .responsive-button {
+                font-size: 1em; /* Smaller button text on mobile */
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>sarbalgyi.net</h1>    </div>
+        <button class="responsive-button">Click View Website</button>
+
+</body>
+</html>
